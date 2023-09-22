@@ -29,10 +29,10 @@ def total_findings(json_file):
   critical_cnt = 0
   total_cnt = 0
 
-  weak_cwe = []
-  medium_cwe = []
-  high_cwe = []
-  critical_cwe = []
+  weak_rules = []
+  medium_rules = []
+  high_rules = []
+  critical_rules = []
 
   with open(json_file) as json_f:
     data = json.load(json_f)
@@ -93,23 +93,23 @@ def total_findings(json_file):
       if severity == "weak":
         weak.append(finding)
         weak_cnt += 1
-        if not rule_id in weak_cwe:
-          weak_cwe.append(rule_id)
+        if not rule_id in weak_rules:
+          weak_rules.append(rule_id)
       elif severity == "medium":
         medium.append(finding)
         medium_cnt += 1
-        if not rule_id in medium_cwe:
-          medium_cwe.append(rule_id)
+        if not rule_id in medium_rules:
+          medium_rules.append(rule_id)
       elif severity == "high":
         high.append(finding)
         high_cnt += 1
-        if not rule_id in high_cwe:
-          high_cwe.append(rule_id)
+        if not rule_id in high_rules:
+          high_rules.append(rule_id)
       else:
         critical.append(finding)
         critical_cnt += 1
-        if not rule_id in critical_cwe:
-          critical_cwe.append(rule_id)
+        if not rule_id in critical_rules:
+          critical_rules.append(rule_id)
 
   total_cnt = weak_cnt + medium_cnt + high_cnt + critical_cnt
 
@@ -129,10 +129,10 @@ def total_findings(json_file):
       "weak": 0
     },
     "findings": {
-      "critical": critical_cwe,
-      "high": high_cwe,
-      "medium": medium_cwe,
-      "weak": weak_cwe
+      "critical": critical_rules,
+      "high": high_rules,
+      "medium": medium_rules,
+      "weak": weak_rules
     },
     "fingerprints": {
       "critical": critical,
