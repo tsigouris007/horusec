@@ -32,11 +32,11 @@ docker build . -t horusec:2.8.0 # or whatever you wanna call it
 
 ### Run
 
-It is preferable to mount the `/data` folder as shown with your current project's folder in order to receive a proper `report.insider.json` file as an output.
+It is preferable to mount the `/data` folder as shown with your current project's folder in order to receive a proper `report.horusec.json` file as an output.
 
 ```bash
 docker run -v $(pwd):/data --rm horusec:2.8.0 -p /data
 ```
 
 This will copy the two report files to your mounted folder. \
-Keep in mind that insider may scan all files. Some extentions have been excluded in the example.
+Keep in mind that horusec may scan all files.
