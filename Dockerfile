@@ -39,4 +39,3 @@ USER user
 WORKDIR /data
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-# ENTRYPOINT [ "tail", "-f", "/dev/null" ]
