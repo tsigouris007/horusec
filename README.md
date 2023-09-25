@@ -1,4 +1,4 @@
-# A rewritten insider Dockerfile
+# A rewritten horusec Dockerfile
 
 This clones and builds https://github.com/ZupIT/horusec
 
